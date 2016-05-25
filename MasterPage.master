@@ -1,0 +1,236 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+ 
+    <style>
+        .nystyle
+        {
+            font-family:Calibri;
+        }
+         body 
+         {
+	background-color: #f8f8f8;
+}
+
+div#menu {
+    top:0px;
+    left:0px;
+    width:100%;
+		background:transparent url(images/header_bg.gif) repeat-x 0 0;  
+}
+
+        .style100
+        {
+            font-size: 25pt;
+            color: #276F83;
+            line-height:50px;
+        }
+
+        .style200
+        {
+            font-size: xx-large;
+        }
+        .style300
+        {
+            font-size: 25pt;
+            color: #5DB5CE;
+            line-height: 50px;
+        }
+
+    </style>
+       <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/templatemo_misc.css">
+        <link rel="stylesheet" href="css/templatemo_style.css" />
+       
+       <script src="js/vendor/jquery-1.11.0.min.js"></script>
+      
+        <script src="js/bootstrap.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+      <link type="text/css" href="menu.css" rel="stylesheet" />
+      <script src="js/zoomsl-3.0.min.js"></script>
+ <script>
+     jQuery(function () {
+
+         // если отсутсвует zoomsl-3.0.min.js
+         if (!$.fn.imagezoomsl) {
+
+             $('.msg').show();
+             return;
+         }
+         else $('.msg').hide();
+
+
+         // инициализация плагина
+         $('.my-foto').imagezoomsl({
+
+             zoomrange: [1, 1.7],
+             zoomstart: 1.7,
+             innerzoom: true,
+             magnifierborder: "none"
+         });
+         $(".thumbicon img").click(function () {
+             var that = this;
+
+             $(".my-foto").fadeOut(600, function () {
+
+                 $(this).attr("src", $(that).attr("src"))
+				   .attr("data-large", $(that).attr("data-tmb-large"))
+				   .fadeIn(1000);
+             });
+
+             return false;
+         });
+
+     });
+</script>
+    <script type="text/javascript" src="menu.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nystyle">
+    <form id="form1" runat="server">
+    <div>
+          <div class="site-header">
+            <div class="container">
+            	<div id="top_links">
+                	
+                   <div class="row">
+                    <div id="rightlinks">
+                    <ul class="col-md-12">
+                    <li><a href="#">Welcome </a></li>
+                    	<li>
+                            <asp:Label ID="Label1" runat="server" Text="Guest" ForeColor="Black"></asp:Label></li>
+                        <li>
+                            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click1" 
+                                Visible="False" CausesValidation="False">Login</asp:LinkButton>
+                        </li>
+                        
+                        <li>
+                             <asp:LinkButton ID="LinkButton4" runat="server" Visible="False" 
+                                 onclick="LinkButton4_Click" CausesValidation="False">SignUp</asp:LinkButton>
+                        </li>
+                        <li>
+                            <asp:LinkButton ID="LinkButton5" runat="server" Visible="False" 
+                                onclick="LinkButton5_Click">Order History</asp:LinkButton>
+                        </li>
+
+                        <li>
+                             <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click1" 
+                                 Visible="False">Change Password</asp:LinkButton></li>
+                          <li>  
+                              <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click1" 
+                                 Visible="False" CausesValidation="False">Log Out</asp:LinkButton>
+                        </li>
+                        <li>
+                            <asp:LinkButton ID="LinkButton6" runat="server" onclick="LinkButton6_Click" 
+                                Visible="False">Admin Home</asp:LinkButton>
+                        </li>
+                    
+                    </ul>
+                    </div>
+                </div>
+                </div>
+                <div class="main-header">
+                	
+                    <div class="row">
+                        <div class="col-md-12 col-sm-6 col-xs-10">
+                            <div class="logo">
+                                <strong class="style2">
+                                 <a href="default8.aspx"> <span class="style300">Best</span><span class="style100">Apparels.Com</span></strong>
+                              </a>
+                            </div> <!-- /.logo -->
+                            <div id="searchbox">
+                                <asp:TextBox ID="TextBox1" runat="server" Height="41px" style="width:252px;position:relative;top:-1px;left:3px;"></asp:TextBox>
+                                <asp:Button
+                                     ID="Button1" runat="server" Text="Search" onclick="Button1_Click" 
+                                    Height="41px" Width="100px" Font-Bold="True" Font-Size="Medium" 
+                                    ForeColor="Black" style="background-color:#5db5ce;color:#fff;"/>
+                             </div>
+                        </div> <!-- /.col-md-4 -->
+                        <div class="clearfix"></div>
+                    </div> <!-- /.row -->
+                    <div class="row">
+                    	<div class="col-md-12" id="menudrop">
+                        	  <div id="mainNav">
+        	<div id="menu">
+    <ul class="menu">
+        <li><a href="default8.aspx"><span>Home</span></a></li>
+        <li><a href="aboutus.aspx"><span>About Us</span></a></li>
+        
+        <asp:PlaceHolder ID="PlaceHolder1" runat="server">
+        
+        
+        
+        </asp:PlaceHolder>
+        
+        <li class="last"><a href="contact us.aspx"><span>Contact Us</span></a></li>
+    </ul>
+   
+</div>
+	<div class="clearfloat"></div>
+</div>
+                        </div>
+                    </div>
+                </div> <!-- /.main-header -->
+               
+            </div> <!-- /.container -->
+              
+        </div> <!-- /.site-header -->
+
+
+    
+         <div class="middle-content">
+        <div class="container">
+              
+                   
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+      <div style="clear:both"></div>
+            </div> <!-- /.container -->
+        </div> <!-- /.middle-content -->
+                <div class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="footer-logo">
+                           
+                        </div>
+                    </div> <!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                  
+                        <div class="copyright">
+                           <p> <span>Copyright &copy; 2015 <a href="default8.aspx">BestApparels.Com</a></span></p>
+                        </div>
+                    </div> <!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                    
+                        <ul class="social-icons">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-linkedin"></a></li>
+                            <li><a href="#" class="fa fa-flickr"></a></li>
+                            <li><a href="#" class="fa fa-rss"></a></li>
+                        </ul>
+                    </div> <!-- /.col-md-4 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.site-footer -->
+
+      
+        <!-- templatemo 409 travel -->  
+    </div>
+    </form>
+    <div style="display:none;"> <a href="http://apycom.com/"></a></div>
+</body>
+</html>

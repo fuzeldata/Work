@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="user.master.cs" Inherits="user" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 1000px;
+        }
+        .style2
+        {
+            width: 103%;
+        }
+        .style3
+        {
+            width: 235px;
+        }
+        .style4
+        {
+            font-family: Calibri;
+        }
+        .style5
+        {
+            font-family: Calibri;
+            font-size: xx-large;
+        }
+        .style6
+        {
+            font-family: Calibri;
+            height: 21px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" cellspacing="0" class="style1">
+            <tr>
+                <td align="right" bgcolor="#E2F0F5" class="style4">
+                    Welcome
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+&nbsp;<asp:LinkButton ID="LinkButton7" runat="server" onclick="LinkButton7_Click" Visible="False">Sign Up</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton8" runat="server" onclick="LinkButton8_Click" Visible="False">Login</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton10" runat="server" onclick="LinkButton10_Click" Visible="False">Change Password</asp:LinkButton>
+&nbsp;<asp:LinkButton ID="LinkButton9" runat="server" onclick="LinkButton9_Click" Visible="False">Signout</asp:LinkButton>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table cellpadding="0" cellspacing="0" class="style2">
+                        <tr>
+                            <td bgcolor="#EEF3F6" class="style3">
+                                <span class="style5"><strong>ShoppingWorld.Com</strong></span><br 
+                                    class="style4" />
+                                <span class="style4">One stop destination</span></td>
+                            <td>
+                                <asp:Image ID="Image1" runat="server" CssClass="style4" 
+                                    ImageUrl="~/imgs/cropped-blog-banner-2.jpg" Width="725px" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table cellspacing="0" class="style2">
+                        <tr align="center" bgcolor="#E2F0F5">
+                            <td width="166">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078" onclick="LinkButton1_Click">Home</asp:LinkButton>
+                                </strong>
+                            </td>
+                            <td class="style4" width="166">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078" onclick="LinkButton2_Click">Admin Panel</asp:LinkButton>
+                                </strong>
+                            </td>
+                            <td class="style4" width="166">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton3" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078">Products</asp:LinkButton>
+                                </strong>
+                            </td>
+                            <td class="style4">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton4" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078">Search</asp:LinkButton>
+                                </strong>
+                            </td>
+                            <td class="style4" style="table-layout: fixed" width="166">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton5" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078">Contact Us</asp:LinkButton>
+                                </strong>
+                            </td>
+                            <td class="style4" width="166">
+                                <strong>
+                                <asp:LinkButton ID="LinkButton6" runat="server" CssClass="style4" 
+                                    Font-Underline="False" ForeColor="#1F6078">Feedback</asp:LinkButton>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style6">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <p>
+                &nbsp;</p>
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" bgcolor="#E2F0F5" class="style4">
+                    Copyright ABC 2015</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
